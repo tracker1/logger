@@ -1,0 +1,36 @@
+{
+  "name": "@tracker1/logger",
+  "version": "1.0.0",
+  "description": "Simple logger for node projects",
+  "author": "Michael J. Ryan <tracker1@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tracker1/logger/issues"
+  },
+  "homepage": "https://github.com/tracker1/logger#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tracker1/logger.git"
+  },
+  "keywords": [
+    "logger",
+    "json",
+    "pretty"
+  ],
+  "main": "dist/index.js",
+  "module": "src/index.mjs",
+  "dependencies": {
+    "fclone": "^1.0.11",
+    "mkdirp": "^0.5.1",
+    "rolling-file": "^1.0.10",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "rollup": "^1.7.4"
+  },
+  "scripts": {
+    "prebuild": "mkdirp dist && rimraf dist/index.js",
+    "build": "rollup src/logger.mjs --format cjs --exports named --external console,process,util,fclone,rolling-file,mkdirp,path,fs,uuid/v4 > dist/index.js",
+    "prepublish": "npm run build"
+  }
+}
