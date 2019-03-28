@@ -1,6 +1,6 @@
 {
   "name": "@tracker1/logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple logger for node projects",
   "author": "Michael J. Ryan <tracker1@gmail.com>",
   "license": "MIT",
@@ -30,7 +30,7 @@
   },
   "scripts": {
     "prebuild": "mkdirp dist && rimraf dist/index.js",
-    "build": "rollup src/logger.mjs --format cjs --exports named --external console,process,util,fclone,rolling-file,mkdirp,path,fs,uuid/v4 > dist/index.js",
+    "build": "rollup src/index.mjs --format cjs --exports default --external console,process,util,fclone,rolling-file,mkdirp,path,fs,uuid/v4 > dist/index.js",
     "prepublish": "npm run build",
     "publishme": "npm publish --access public"
   }

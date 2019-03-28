@@ -29,7 +29,7 @@ export default createLogger();
 or log.js
 
 ```
-const createLogger = require('@tracker1/logger').default;
+const createLogger = require('@tracker1/logger');
 
 module.exports = createLogger();
 ```
